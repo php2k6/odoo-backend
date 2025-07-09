@@ -104,7 +104,6 @@ python-socks==2.7.1
 pythonnet==3.0.5
 pytz==2025.2
 pywebview==5.4
-pywin32==310
 PyYAML==6.0.2
 requests==2.32.4
 rich==14.0.0
