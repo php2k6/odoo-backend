@@ -11,8 +11,8 @@ router = APIRouter(
     tags=["chatbot"]           # optional: groups routes in docs
 )
 
-@router.get("/")
-def chat(query : str = Body(...)):
+@router.post("/")
+def chat(query : str = Body(...,embed=True)):
     
     result = get_query_response(query)
     return {"response": result}

@@ -4,11 +4,13 @@ import g4f.Provider
 import sys
 import os
 
-def get_query_responce(query):
+def get_query_response(query):
     client = Client()
     test_model = "gpt-4o"
     test_prompt = query
-    with open("system_prompt.txt", "r", encoding="utf-8") as f:
+    base_dir = os.path.dirname(__file__)  # this will be 'app/' directory
+    prompt_path = os.path.join(base_dir, "system_prompt.txt")
+    with open(prompt_path, "r", encoding="utf-8") as f:
         system_msg = f.read()
     test_provider = g4f.Provider.PollinationsAI
     response = client.chat.completions.create(
